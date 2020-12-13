@@ -1,0 +1,30 @@
+# see https://github.com/Lnk2past/contest
+executable: main.exe
+test-cases:
+    - name: test-01
+      env:
+        DISABLE_MALEN: ""
+      returncode: 0
+      argv: ["data/sandpile_10x10_4.dat"]
+      ofstreams:
+        - file: test_files/sandpile_20.bin
+          test-file: sandpile_20.bin
+          binary: True
+    - name: test-02
+      env:
+        DISABLE_MALEN: ""
+      returncode: 0
+      argv: ["data/sandpile_50x50_smiley.dat"]
+      ofstreams:
+        - file: test_files/sandpile_296.bin
+          test-file: sandpile_296.bin
+          binary: True
+    - name: test-03
+      env:
+        DISABLE_MALEN: ""
+      returncode: 0
+      argv: ["50", "10000"]
+      ofstreams:
+        - file: test_files/sandpile_574.bin
+          test-file: sandpile_574.bin
+          binary: True
