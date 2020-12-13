@@ -1,0 +1,17 @@
+test.cpp
+test*.h
+*.exe
+*.o
+*.obj
+*.d
+*.dep
+*.html
+*.dat
+*.csv
+*.bin
+__pycache__
+test_output
+!**/data/**
+!**/test_files/**
+**malen**
+**fmt**
