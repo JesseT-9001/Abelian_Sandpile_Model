@@ -1,0 +1,43 @@
+Removing before submitting:
+main:
+    -#include <iostream>
+
+- Figure out how to take input from cmd args and what that looks like.
+    -Used iostream cout for troubleshooting.
+    -executing main without arg, argc = 1
+    -executing main with arg, argc = n
+        n = nuumber of items delineated by spaces.
+    -arg values are pased in as strings.
+    -pass char pointer to function because a string is just an array and can be passed as reference.
+    -convert string to char for use in random sandpile creation.
+    
+    Discoveries:
+        -uniform_int_distribution upper bound is inclusive
+
+    Original code:
+    auto result = *std::max_element(begin(sandpile[i]), end(sandpile[i]));
+        // if (result >= 4){
+
+    Steps:
+        -Decide whether we are dealing with 1 or 2 inputs, else return 1 or error.
+        -if one arg is present, call the read_sandpile_file function
+            -pass arg as is.
+        -if two arg is present, call create_sandpile.
+            -convert args to ints before pasing.
+
+    TODO:
+        - add input error checking.
+        - Done - Since we are only dealing with two cases: n = 2 or 3, everything else can return 1 or an error.
+        - Done - Figure out how to convert a char* to a string.
+            - use stoi, reference: https://en.cppreference.com/w/cpp/string/basic_string/stol
+
+    Scrap Code:
+        - Code to check correctnes of input reading.
+            for (auto &x: sandpile)
+            {
+                for (auto &y: x)
+                {
+                    std::cout << y << ' ';
+                }
+                std::cout << std::endl;
+            }
