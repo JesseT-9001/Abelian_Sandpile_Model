@@ -8,14 +8,21 @@
 
 #include "make_sandpile.h"
 
+#include <thread>
+
 // define a function for generating a random sandpile given a size and count
-Sandpile create_sandpile(int s, int n)
+Sandpile create_sandpile(char* s, char* n)
 {
-    Row row(s, 0);
-    Sandpile sandpile(s, row);
+    std::stringstream ss(s), nn(n);
+    int size = 0, number = 0;
+    ss >> size;
+    nn >> number;
+    
+    Row row(size, 0);
+    Sandpile sandpile(size, row);
     std::mt19937_64 eng(1337);
-    std::uniform_int_distribution<int> dis(0, s-1);
-    for (int i = 0; i < n; i++)
+    std::uniform_int_distribution<int> dis(0, size-1);
+    for (int i = 0; i < number; i++)
     {
         sandpile[dis(eng)][dis(eng)] += 1;
     }
