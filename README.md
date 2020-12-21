@@ -25,7 +25,7 @@ After `is_stable` returns the result is recorded and the current state of the sa
 
 ## Challenges
 
-I initially created this program multi-threaded. When scanning the sandpile, I used 4 threads initially and made sure the work was split between the threads such that each thread should receive no less than 10 rows which would minimize the chance of a race condition. It worked and produced the same looking results as the single version, but didn't pass the tests. I guess that when accessing the sandpile reference it counted as multiple touches or perhaps some artifacts where being returned that I didn't fully understand
+I initially created this program multi-threaded. When scanning the sandpile, I used up to 4 threads and made sure the work was split between the threads such that each thread should receive no less than 10 rows along with having sections size/"number of thread", which would minimize the chance of a race condition. I was able to get it working and produce the same looking results as the single-threaded version, however, it didn't pass the tests. I guess that when accessing the sandpile reference it counted as multiple touches or perhaps some artifacts were being returned that I didn't fully understand.
 
 ## Improvements
 
