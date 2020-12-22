@@ -6,7 +6,7 @@
 #include "sandpile.h"
 
 // forward declare a function for generating a random sandpile given a size and count
-Sandpile create_sandpile(char* s, char* n);
+Sandpile create_sandpile(int s, int n);
 
 // forward declare a function for reading a sandpile from a file given its filename
 Sandpile read_sandpile_file(char *file_name);

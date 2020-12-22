@@ -20,7 +20,9 @@ int main(int argc, char **argv)
     else if (argc == 3)
     {
         // Make sandpile using random generator.
-        sandpile = create_sandpile(argv[1], argv[2]);
+        int s = std::stoi(argv[1]);
+        int n = std::stoi(argv[2]);
+        sandpile = create_sandpile(s, n);
     }
     else
     {
@@ -33,9 +35,9 @@ int main(int argc, char **argv)
 void run_simulation(Sandpile &sandpile)
 {
     Animation steps(1,sandpile);
-    bool result = false;
-    while (!result){
-        result = is_stable(sandpile);
+    while (!is_stable(sandpile)){
+        // stabilize(sandpile);
+        stabilize_threaded(sandpile);
         steps.emplace_back(sandpile);
     }
     animate(steps);
