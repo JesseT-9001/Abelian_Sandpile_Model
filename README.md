@@ -31,7 +31,7 @@ I initially created this program multi-threaded. When scanning the sandpile, I u
 
 First I'd implement error checking and helpful error messages throughout the code.
 
-Another "improvement" would be making the sandpile environment into a class. This would probably allow us to have multiple sandpiles interacting with one another.
+Another "improvement" would be making the sandpile environment into a class. This would probably allow us to have multiple sandpiles interacting with one another with greater ease.
 
 To speed things up slightly, without using multithreading, we can implement a data structure with a hash map to keep track of only the positions with a value of 4 or greater and use those positions to modify the sandpile instead of rescanning the whole thing.
 

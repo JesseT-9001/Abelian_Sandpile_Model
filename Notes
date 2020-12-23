@@ -27,6 +27,8 @@ main:
 
     TODO:
         - add input error checking.
+        - Update read me regarding stoi and threading.
+        
         - Done - Since we are only dealing with two cases: n = 2 or 3, everything else can return 1 or an error.
         - Done - Figure out how to convert a char* to a string.
             - use stoi, reference: https://en.cppreference.com/w/cpp/string/basic_string/stol
@@ -41,3 +43,6 @@ main:
                 }
                 std::cout << std::endl;
             }
+
+Update:
+Solved threaded issue: Moved flatten logic outside of is_stable and created a threaded version of stablize.
